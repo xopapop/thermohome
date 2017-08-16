@@ -1,1 +1,28 @@
+Objective: Create a website to control home thermostat
 
+Thermostat <-- Website <-- [Mobile App]
+    + Website <-- Front End <-- Back End
+          ++ Back End: 
+                    Get Weather Data
+                    Get Values from Thermostat
+                     - Prepare Data for Graphs/Make Graphs
+                    Set Values (ON/OFF)
+                     - Logic for Setpoints & Deviation
+                     - Tomer
+          ++ Front End
+                    Access from Anywhere
+                     - Login/Logout
+                    Display
+                     - Current Temp
+                     - On/Off Status
+                     - Weather Data
+                    Manual Control
+                     - ON/OFF
+                     - For Set Time
+                    Planned Temperature
+                     - Set Point with Deviation
+                     - Scheduler
+                    Historical Data
+                     - See Previous Temps
+                     - See Set Points & ON/OFF duration
+                     - Line Graph of Data

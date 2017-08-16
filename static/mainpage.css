@@ -5,3 +5,8 @@
     border-color: black;
 
 }
+.placeholder {
+    padding: 50px;
+    height: 10px;
+    background-color: aquamarine;
+}

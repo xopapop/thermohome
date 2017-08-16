@@ -1,0 +1,16 @@
+TASK:
+H   1 SET NEW TEMPERATURE
+         - new temp, max, min
+              + javascript?
+         - submit
+              + POST request to Backend
+              + page reloads with Success popup
+              
+H   2 DISPLAY CURRENT TEMP AND STATUS
+         - current temp and status from backen
+              + GET request to Backend, send back data to page
+                    
+M   3 WEATHER
+         - current temp, sunshine status image
+              + include with HTML, GET request to Backend, send back data to page
+                     
