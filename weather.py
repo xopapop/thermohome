@@ -1,5 +1,13 @@
 from classes import weather
 import json
+import requests
+base_url = 'http://api.openweathermap.org/data/2.5/weather?zip=43201,us&appid='
+key_file = open('api_keys.txt','r')
+key = key_file.readline()
+key_file.close()
+api_url = base_url+key
+api_response = requests.get(api_url)
+print(api_response.text)
 example = """{"coord":{"lon":139,"lat":35},
 "sys":{"country":"JP","sunrise":1369769524,"sunset":1369821049},
 "weather":[{"id":804,"main":"clouds","description":"overcast clouds","icon":"04n"}],
@@ -13,7 +21,7 @@ example = """{"coord":{"lon":139,"lat":35},
 "cod":200}"""
 #documentation: openweathermap.org/current
 #variables
-ex = json.loads(example)
+ex = json.loads(api_response.text)
 dt = ex['dt']
 temp_k = ex['main']['temp']
 rh = ex['main']['humidity']
