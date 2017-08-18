@@ -1,3 +1,4 @@
+from classes import weather
 import json
 example = """{"coord":{"lon":139,"lat":35},
 "sys":{"country":"JP","sunrise":1369769524,"sunset":1369821049},
@@ -10,19 +11,14 @@ example = """{"coord":{"lon":139,"lat":35},
 "id":1851632,
 "name":"Shuzenji",
 "cod":200}"""
+#variables
 ex = json.loads(example)
-print(ex.keys())
-print(ex['weather'])
-print(ex['weather'][0])
-print(ex['weather'][0]['description'])
-# documentation https://openweathermap.org/current
-# our final dictionary
-# keys are temp, humidity, wind_speed, wind_direction, percent_clouds
-# how to access the information similar to print stateents
-# store data in individual variables
-percent_clouds = ex['clouds']['all'] # should be 92
-print(92)
-# do that for all the keys
-# then put in dictionary
-weather_dictionary = {'Cloudiness':percent_clouds} # separate each Key:value with a comma
-sample_dictionary = {'1':'a', '2': 'b'}
+dt = ex['dt']
+temp_k = ex['main']['temp']
+rh = ex['main']['humidity']
+description = ex['weather'][0]['description']
+wind_speed = ex['wind']['speed']
+wind_angle = ex['wind']['deg']
+#dictionary
+weather_dict = {'dt':dt, 'temp_k':temp_k, 'rh':rh, 'description':description, 'wind_speed':wind_speed, 'wind_directions':wind_angle}
+weather_obj = weather(weather_dict)
