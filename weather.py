@@ -11,6 +11,7 @@ example = """{"coord":{"lon":139,"lat":35},
 "id":1851632,
 "name":"Shuzenji",
 "cod":200}"""
+#documentation: openweathermap.org/current
 #variables
 ex = json.loads(example)
 dt = ex['dt']
